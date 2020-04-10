@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>COVID-19 Academic Graph</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- header-start -->
+<header>
+    <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid ">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+
+                            <div class="logo">
+                                <a href="index.html">
+                                    <p style="color:whitesmoke;"><spam><img src = "img/logo.png" width = "100px" ></spam>CWRU Database Group</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="group.html">People</a></li>
+                                        <li><a href="proj.html">Research</a></li>
+                                        <li><a href="courses.html">Courses</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="resources.html">Resources</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
+<!-- bradcam_area  -->
+<div class="slider_area_shrink">
+    <div class="single_slider single_slider_area_shrink d-flex align-items-center">
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+
+<!-- counter_area  -->
+<!--/ counter_area  -->
+
+<!-- team_area  -->
+<div class="team_area">
+    <div class="container">
+
+        <div class="section_title mb-40 text-center">
+            <h3>
+                COVID-19 Twitter Graph
+            </h3>
+        </div>
+
+        <p>This COVID-19 twitter graph dataset is generated  based on the <a
+                href="https://github.com/echen102/COVID-19-TweetIDs">COVID-19-Tweet-IDs</a> created by
+            <a href="https://www.usc.edu/">University of Southern California</a>. Based on the original information of
+            COVID-19-Tweet-IDs, we created a retweet network and a semantic network.
+            By only extracting English tweets, we get in
+            total 6 Million tweets and construct a retweet networks.</p>
+
+
+
+
+
+
+
+        <p>The details of the retweet network are shown below.</p>
+        <center>
+            <table border="1" width="700" align="center">
+
+                <tr>
+
+                    <td> Dataset</td>
+
+                    <td># of nodes</td>
+
+                    <td>type:tweet</td>
+
+                    <td>type:user</td>
+
+                    <td># of edges</td>
+
+                    <td>type:retweeted from</td>
+
+                    <td>type:post</td>
+
+
+                    <td>Maximal Depth</td>
+
+                </tr>
+
+                <tr>
+                    <td>Retweet</td>
+                    <td>6021624</td>
+
+                    <td>4159802</td>
+
+                    <td>1861822</td>
+
+                    <td>9634294</td>
+                    <td>2953175</td>
+                    <td>6681119</td>
+                    <td>2</td>
+
+                </tr>
+
+
+
+            </table>
+        </center>
+
+        <br>
+
+        <p>Each network contains two files, the retweet network and the attributes file.
+            The retweet network contains retweet relationships of all extracted tweets.
+        Example: "1231987151606140928 49916007  \t  1231722638751326208 729246649". Each line in retweet network is a pair
+        seperated by "\t". The example implies the tweet 1231987151606140928 posted by 49916007  is retweeted from 1231722638751326208
+        posted by 729246649.
+
+        <p> For each tweet and user, we extract attributes as follow: <br>
+
+            tweet :  (createdAt “time” ) (hashtag “text”) (mention “userid”) (retweetCount “number”)
+            <br>
+            user:    (createdAt “time” )   (followerCount “number”) (followingCount “number”)
+        <br>
+        Example:  <br>
+        1231987148699639812  \t	type  \t	Tweet  <br>
+        1231987148699639812	 \t createdAt \t Mon Feb 24 17:00:00 +0000 2020 <br>
+        1231987148699639812	 \t mention	 \t 968847322653306880 <br>
+        </p>
+
+        </p>
+
+
+        <h4>COVID-19 Twitter-Semantic Network</h4>
+
+        <p>
+
+            By extracting the full text of each COVId-19 realted tweet and leveraging <a
+                href="https://nlp.stanford.edu/software/openie.html#Download">OpenIE</a>,
+            we generate a semantic graph that contains COVID-related information. The graph
+            <i>COVID-twitter-semantic</i> contains in total 15,853,229 triples, which includes
+            437,022 types of relations. For each triple, we associate the original twitter id that the triple is
+            generated from. The maximal depth of the COVID-twitter-semantic network is 6.
+            <br>
+        </p>
+
+        <h4>Download Link</h4>
+
+        <p>
+            Twitter-Semantic-Network [<a
+                href="https://drive.google.com/file/d/1yOb4LQnMpm7aqpihtrd5ltx3z0kZmS6k/view?usp=sharing">COVID-Twitter-Semantic.zip</a>]
+            <br>
+
+            Twitter-Retweet-Network [<a
+                href="https://drive.google.com/file/d/13cHFhnrHUEQ8gyOdzsiEfGdqT0whB3jw/view?usp=sharing">CCOVID-Twitter-Retweet.zip</a>]
+            <br>
+
+            Twitter-Retweet-Attributes [<a
+                href="https://drive.google.com/file/d/1IQPXsP8P0-NAJhkY1mifKwSTBaZc93Gr/view?usp=sharing">COVID-Twitter-Attributes.zip</a>]
+
+        </p>
+        <!--
+            <h2>Acknowledgements</h2>
+
+            <p>This project is supported in part by NSF IIS-1633629 and Google Faculty Research Award.</p>
+        -->
+    </div>
+</div>
+<!-- /team_area  -->
+
+
+<!-- testimonial_area  -->
+
+
+<!-- footer start -->
+<footer class="footer">
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This website is powered <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer end  -->
+
+<!-- link that opens popup -->
+<!-- JS here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+<!-- <script src="js/gijgo.min.js"></script> -->
+<script src="js/slick.min.js"></script>
+
+
+<!--contact js-->
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+
+
+<script src="js/main.js"></script>
+</body>
+
+</html>

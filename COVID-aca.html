@@ -1,0 +1,300 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>COVID-19 Academic Graph</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- header-start -->
+<header>
+    <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid ">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+
+                            <div class="logo">
+                                <a href="index.html">
+                                    <p style="color:whitesmoke;"><spam><img src = "img/logo.png" width = "100px" ></spam>CWRU Database Group</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="group.html">People</a></li>
+                                        <li><a href="proj.html">Research</a></li>
+                                        <li><a href="courses.html">Courses</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="resources.html">Resources</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
+<!-- bradcam_area  -->
+<div class="slider_area_shrink">
+    <div class="single_slider single_slider_area_shrink d-flex align-items-center">
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+
+<!-- counter_area  -->
+<!--/ counter_area  -->
+
+<!-- team_area  -->
+<div class="team_area">
+    <div class="container">
+        <div class="section_title mb-40 text-center">
+            <h3>
+               COVID-19 Academic Graph
+            </h3>
+        </div>
+        <p>This COVID-19 academic graph dataset is generated based on the <a
+                href="https://pages.semanticscholar.org/coronavirus-research">COVID-19 Open Research Dataset</a> created
+            by <a href="https://allenai.org/">Allen Institute for AI</a>. Based on the 2020-03-27 release which contains
+            33000 full text articles, we created a citation network and a semantic network. </p>
+
+
+        <h4> COVID-19 Citation Network </h4>
+
+        <p>By filtering the paper with missing title or author information, we get in total 28,757 papers (in JSON
+            format) and construct two citation networks. The core network contains the author and citation information
+            of these 28,757 papers only, while the complete network contains the papers cited by these 28,757 papers and
+            their authors. The details of these two networks are shown below.
+
+        <center>
+            <table border="1" width="400" align="center">
+
+                <tr>
+
+                    <td> Datasets</td>
+
+                    <td> Core</td>
+
+                    <td> Complete</td>
+
+                </tr>
+
+                <tr>
+
+                    <td># of nodes</td>
+
+                    <td>181,166</td>
+
+                    <td>2,223,994</td>
+
+                </tr>
+
+                <tr>
+
+                    <td> type:paper</td>
+
+                    <td>28,757</td>
+
+                    <td>1,132,472</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>type:author</td>
+
+                    <td>152,409</td>
+
+                    <td>1,091,522</td>
+
+                </tr>
+
+                <tr>
+
+                    <td># of edges</td>
+
+                    <td>233,556</td>
+
+                    <td>6,431,265</td>
+
+                </tr>
+
+                <tr>
+
+                    <td> type:isWrittenBy</td>
+
+                    <td>193,525</td>
+
+                    <td>4,684,141</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>type:isCitedBy</td>
+
+                    <td>40,031</td>
+
+                    <td>1,747,124</td>
+
+                </tr>
+
+            </table>
+        </center>
+        </p>
+
+
+        <p>Each network contains two files, the node and the edge file, both contain triples separated by "\t". Each
+            triple in the node file is in the format of (nodeID, node attribute name, attribute value). For <i>paper</i>
+            nodes, we include the <i>title</i> information and the link to its original JSON file, i.e. <i>fileName</i>.
+            Similarly, for <i>author</i> nodes, we include their <i> firstname</i>, <i>lastname</i> and
+            <i>affiliation</i>. Each triple in the edge file is in the format of (nodeID, edge type, nodeID).
+        </p>
+
+
+        <h4>COVID-19 Semantic Network</h4>
+
+        <p>
+
+            By extracting the full text of each paper and leveraging <a
+                href="https://nlp.stanford.edu/software/openie.html#Download">OpenIE</a>,
+            we generate a semantic graph that contains COVID-related information. The graph
+            <i>COVID-academic-semantic</i> contains in total 46,020,975 triples, which includes 17,666,478 entities and
+            1,778,310 types of relations. For each triple, we associate the original paper file name that the triple is
+            generated from.
+            <br>
+            Additionaly, we use <a href=https://cogcomp.seas.upenn.edu/page/demo_view/Wikifier>Wikifier</a> to identify
+            the entities and link them to Wiki pages. We found that 150,176 entities can be identified.
+        </p>
+
+        <h4>Download Link</h4>
+
+        <p>
+            Citation network - core [<a
+                href="https://drive.google.com/file/d/1r4BZG6ByGg4b2Er8wX_dAWO24uE1U_Q9/view?usp=sharing">COVID-academic-core.zip</a>]
+            <br>
+
+            Citation network - complete [<a
+                href="https://drive.google.com/file/d/1ijcRY29D9-_Nxorjwm9Sf0qTedz_krSu/view?usp=sharing">COVID-academic-complete.zip</a>]
+            <br>
+
+            Semantic network [<a
+                href="https://drive.google.com/file/d/19xfDkql1re8qTzkQHOIt_Q2_0MfI8bRE/view?usp=sharing">COVID-academic-semantic.zip</a>]
+            <br>
+
+            Semantic network - Wiki entities [<a
+                href="https://drive.google.com/file/d/1LDHr-pb9eUW00edAZUueKcsHmpKwPigS/view?usp=sharing">COVID-academic-semantic-entity-wiki.zip</a>]
+        </p>
+        <!--
+            <h2>Acknowledgements</h2>
+
+            <p>This project is supported in part by NSF IIS-1633629 and Google Faculty Research Award.</p>
+        -->
+    </div>
+</div>
+<!-- /team_area  -->
+
+
+<!-- testimonial_area  -->
+
+
+<!-- footer start -->
+<footer class="footer">
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This website is powered <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer end  -->
+
+<!-- link that opens popup -->
+<!-- JS here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+<!-- <script src="js/gijgo.min.js"></script> -->
+<script src="js/slick.min.js"></script>
+
+
+<!--contact js-->
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+
+
+<script src="js/main.js"></script>
+</body>
+
+</html>
